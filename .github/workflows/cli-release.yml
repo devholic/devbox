@@ -12,8 +12,6 @@ on:
         required: false
         default: false
         type: boolean
-  schedule:
-    - cron: "45 8 * * 4" # Weekly pre-release on Thursdays.
   push:
     tags:
       - "*" # Tags that trigger a new release version
@@ -49,8 +47,8 @@ jobs:
           args: release --rm-dist --skip-publish --skip-announce --snapshot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TELEMETRY_KEY: ${{ secrets.TELEMETRY_KEY }}
-          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          TELEMETRY_KEY: ""
+          SENTRY_DSN: ""
       - name: Determine snapshot tag
         run: |
           TAG=$(ls dist/*_linux_386.tar.gz | cut -d '_' -f 2 | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+-dev')
@@ -87,8 +85,8 @@ jobs:
           version: latest
           args: release --rm-dist
         env:
-          DISCORD_WEBHOOK_ID: ${{ secrets.DISCORD_WEBHOOK_ID }}
-          DISCORD_WEBHOOK_TOKEN: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+          DISCORD_WEBHOOK_ID: ""
+          DISCORD_WEBHOOK_TOKEN: ""
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TELEMETRY_KEY: ${{ secrets.TELEMETRY_KEY }}
-          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          TELEMETRY_KEY: ""
+          SENTRY_DSN: ""
