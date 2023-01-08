@@ -5,7 +5,6 @@ package boxcli
 
 import (
 	"fmt"
-	"os/exec"
 
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
@@ -65,11 +64,6 @@ func runShellCmd(cmd *cobra.Command, args []string, flags shellCmdFlags) error {
 		err = box.Exec(cmds...)
 	} else {
 		err = box.Shell()
-	}
-
-	var exitErr *exec.ExitError
-	if errors.As(err, &exitErr) {
-		return nil
 	}
 	return err
 }

@@ -12,7 +12,9 @@ require (
 	github.com/creekorful/mvnparser v1.5.0
 	github.com/denisbrodbeck/machineid v1.0.1
 	github.com/fatih/color v1.13.0
+	github.com/getsentry/sentry-go v0.16.0
 	github.com/google/go-cmp v0.5.9
+	github.com/google/uuid v1.3.0
 	github.com/imdario/mergo v0.3.13
 	github.com/mholt/archiver/v4 v4.0.0-alpha.7
 	github.com/pelletier/go-toml/v2 v2.0.5
@@ -36,9 +38,7 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dsnet/compress v0.0.1 // indirect
-	github.com/getsentry/sentry-go v0.16.0 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
-	github.com/google/uuid v1.3.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.1 // indirect
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
 	github.com/klauspost/compress v1.15.11 // indirect
